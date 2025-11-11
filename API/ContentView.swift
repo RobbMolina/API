@@ -17,7 +17,9 @@ struct ContentView: View {
                 ForEach(pokemonList.pokemon.results, id: \.self) { pokemon in
                     VStack {
                         Text(pokemon.name)
-                        AsyncImage(url: URL(string:pokemon.url))
+                        AsyncImage(url: URL(string:pokemon.url)){
+                            image in image.resizable
+                        }
                     }
                 }
             }
